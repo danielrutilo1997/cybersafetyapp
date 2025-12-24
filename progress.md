@@ -18,10 +18,6 @@ Building a feature that fetches current cybersecurity events from a website, sum
 - [x] Added state management (`flutter_bloc`, `bloc`)
 - [x] Ran `flutter pub get` to install packages
 
----
-
-### 🔄 In Progress
-
 #### Task 2: Configure Firebase project and connect to Flutter app
 - [x] Created Firebase project in Firebase Console
 - [x] Registered Flutter app (Android/iOS) with package name `com.rutilo.cybersafetyapp`
@@ -30,26 +26,21 @@ Building a feature that fetches current cybersecurity events from a website, sum
 - [x] Added Firebase config files to project
 - [x] Updated `.gitignore` to exclude Firebase config files
 - [x] Updated Android Gradle files with Google services plugin
-- [ ] Initialize Firebase in main.dart - **NEXT STEP**
+- [x] Initialized Firebase in main.dart with `Firebase.initializeApp()`
 
 **Resources:** [FlutterFire Documentation](https://firebase.flutter.dev/docs/overview)
 
-**Current Status:** Ready to initialize Firebase in main.dart
-
----
-
-### 📋 Upcoming Tasks
-
----
-
 #### Task 3: Set up OpenAI API configuration and API key management
-- [ ] Create OpenAI account and get API key
-- [ ] Set up secure API key storage (environment variables)
-- [ ] Learn about OpenAI Chat Completions API
+- [x] Created OpenAI account and got API key
+- [x] Set up secure API key storage in `keys.json`
+- [x] Added `keys.json` to `.gitignore` for security
+- [x] Used proper JSON format for key storage
 
 **Resources:** [OpenAI Platform](https://platform.openai.com)
 
 ---
+
+### 🔄 In Progress
 
 #### Task 4: Research and choose a cybersecurity news source/API
 - [ ] Explore options:
@@ -57,6 +48,13 @@ Building a feature that fetches current cybersecurity events from a website, sum
   - RSS feeds (Krebs on Security, The Hacker News)
   - Other cybersecurity news APIs
 - [ ] Choose a source and understand API limits
+- [ ] Test the chosen source
+
+**Current Status:** Ready to choose and test a news source
+
+---
+
+### 📋 Upcoming Tasks
 
 ---
 
@@ -161,10 +159,10 @@ Building a feature that fetches current cybersecurity events from a website, sum
 
 ## Next Immediate Steps
 
-1. Initialize Firebase in main.dart (final step of Task 2)
-2. Get OpenAI API key (Task 3)
-3. Choose a cybersecurity news source/API (Task 4)
+1. Choose a cybersecurity news source/API (Task 4)
+2. Create data models for cybersecurity events (Task 5)
+3. Implement news fetching service (Task 6)
 
 ---
 
-**Last Updated:** 2025-12-23
+**Last Updated:** 2025-12-24
