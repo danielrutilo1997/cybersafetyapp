@@ -16,26 +16,29 @@ Building a feature that fetches current cybersecurity events from a website, sum
 - [x] Added HTTP client (`http`)
 - [x] Added URL launcher (`url_launcher`)
 - [x] Added state management (`flutter_bloc`, `bloc`)
-- **Next step:** Run `flutter pub get` to install packages
+- [x] Ran `flutter pub get` to install packages
 
 ---
 
 ### 🔄 In Progress
 
-None currently
+#### Task 2: Configure Firebase project and connect to Flutter app
+- [x] Created Firebase project in Firebase Console
+- [x] Registered Flutter app (Android/iOS) with package name `com.rutilo.cybersafetyapp`
+- [x] Downloaded `google-services.json` (Android)
+- [x] Downloaded `GoogleService-Info.plist` (iOS)
+- [x] Added Firebase config files to project
+- [x] Updated `.gitignore` to exclude Firebase config files
+- [x] Updated Android Gradle files with Google services plugin
+- [ ] Initialize Firebase in main.dart - **NEXT STEP**
+
+**Resources:** [FlutterFire Documentation](https://firebase.flutter.dev/docs/overview)
+
+**Current Status:** Ready to initialize Firebase in main.dart
 
 ---
 
 ### 📋 Upcoming Tasks
-
-#### Task 2: Configure Firebase project and connect to Flutter app
-- [ ] Create Firebase project in Firebase Console
-- [ ] Register Flutter app (Android/iOS)
-- [ ] Download `google-services.json` (Android)
-- [ ] Download `GoogleService-Info.plist` (iOS)
-- [ ] Initialize Firebase in main.dart
-
-**Resources:** [FlutterFire Documentation](https://firebase.flutter.dev/docs/overview)
 
 ---
 
@@ -137,13 +140,14 @@ None currently
 - **Backend:** Firebase (Firestore)
 - **AI:** OpenAI API
 - **State Management:** BLoC pattern
+- **Package Name:** com.rutilo.cybersafetyapp
 - **Key Packages:**
-  - firebase_core: ^3.8.1
-  - cloud_firestore: ^5.5.2
+  - firebase_core: ^4.3.0
+  - cloud_firestore: ^6.1.1
   - http: ^1.2.2
   - url_launcher: ^6.3.1
-  - flutter_bloc: ^8.1.6
-  - bloc: ^8.1.4
+  - flutter_bloc: ^9.1.1
+  - bloc: ^9.1.0
 
 ---
 
@@ -157,10 +161,10 @@ None currently
 
 ## Next Immediate Steps
 
-1. Run `flutter pub get` in terminal to install dependencies
-2. Set up Firebase project (Task 2)
-3. Get OpenAI API key (Task 3)
+1. Initialize Firebase in main.dart (final step of Task 2)
+2. Get OpenAI API key (Task 3)
+3. Choose a cybersecurity news source/API (Task 4)
 
 ---
 
-**Last Updated:** 2025-12-22
+**Last Updated:** 2025-12-23
