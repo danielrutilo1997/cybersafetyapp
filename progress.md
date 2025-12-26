@@ -38,25 +38,17 @@ Building a feature that fetches current cybersecurity events from a website, sum
 
 **Resources:** [OpenAI Platform](https://platform.openai.com)
 
+#### Task 4: Research and choose a cybersecurity news source/API
+- [x] Explored options (NewsAPI.org, RSS feeds)
+- [x] Chose BleepingComputer RSS feed
+- [x] Identified feed URL: https://www.bleepingcomputer.com/feed/
+- [x] Determined data format: RSS/XML (no API key required)
+
+**Resources:** [BleepingComputer RSS Feed](https://www.bleepingcomputer.com/feed/)
+
 ---
 
 ### 🔄 In Progress
-
-#### Task 4: Research and choose a cybersecurity news source/API
-- [ ] Explore options:
-  - NewsAPI.org
-  - RSS feeds (Krebs on Security, The Hacker News)
-  - Other cybersecurity news APIs
-- [ ] Choose a source and understand API limits
-- [ ] Test the chosen source
-
-**Current Status:** Ready to choose and test a news source
-
----
-
-### 📋 Upcoming Tasks
-
----
 
 #### Task 5: Create data models for cybersecurity events
 - [ ] Create `CyberSecurityEvent` class
@@ -64,6 +56,12 @@ Building a feature that fetches current cybersecurity events from a website, sum
 - [ ] Implement JSON serialization (`fromJson`, `toJson`)
 
 **File location:** `lib/models/cyber_security_event.dart`
+
+**Current Status:** Ready to create model class
+
+---
+
+### 📋 Upcoming Tasks
 
 ---
 
@@ -137,6 +135,7 @@ Building a feature that fetches current cybersecurity events from a website, sum
 - **Framework:** Flutter
 - **Backend:** Firebase (Firestore)
 - **AI:** OpenAI API
+- **News Source:** BleepingComputer RSS Feed
 - **State Management:** BLoC pattern
 - **Package Name:** com.rutilo.cybersafetyapp
 - **Key Packages:**
@@ -159,10 +158,10 @@ Building a feature that fetches current cybersecurity events from a website, sum
 
 ## Next Immediate Steps
 
-1. Choose a cybersecurity news source/API (Task 4)
-2. Create data models for cybersecurity events (Task 5)
-3. Implement news fetching service (Task 6)
+1. Create CyberSecurityEvent model class (Task 5)
+2. Implement NewsService to fetch RSS feed (Task 6)
+3. Create OpenAI summarization service (Task 7)
 
 ---
 
-**Last Updated:** 2025-12-24
+**Last Updated:** 2025-12-25
