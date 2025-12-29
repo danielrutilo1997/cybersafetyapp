@@ -46,18 +46,27 @@ Building a feature that fetches current cybersecurity events from a website, sum
 
 **Resources:** [BleepingComputer RSS Feed](https://www.bleepingcomputer.com/feed/)
 
+#### Task 5: Create data models for cybersecurity events
+- [x] Created `CyberSecurityEvent` class
+- [x] Added fields: title, description, url, publishedDate, summary
+- [x] Implemented JSON serialization (`fromJson`, `toJson`)
+
+**File location:** `lib/models/cyber_security_event.dart`
+
 ---
 
 ### 🔄 In Progress
 
-#### Task 5: Create data models for cybersecurity events
-- [ ] Create `CyberSecurityEvent` class
-- [ ] Add fields: title, description, url, publishedDate, summary
-- [ ] Implement JSON serialization (`fromJson`, `toJson`)
+#### Task 6: Implement service to fetch cybersecurity news articles
+- [x] Created `NewsService` class structure
+- [x] Added HTTP GET request logic
+- [x] Added XML parsing logic
+- [ ] Fix syntax errors and complete implementation
+- [ ] Test the service
 
-**File location:** `lib/models/cyber_security_event.dart`
+**File location:** `lib/services/news_service.dart`
 
-**Current Status:** Ready to create model class
+**Current Status:** Service structure complete, needs bug fixes before testing
 
 ---
 
@@ -158,10 +167,10 @@ Building a feature that fetches current cybersecurity events from a website, sum
 
 ## Next Immediate Steps
 
-1. Create CyberSecurityEvent model class (Task 5)
-2. Implement NewsService to fetch RSS feed (Task 6)
+1. Fix syntax errors in NewsService (Task 6)
+2. Test NewsService to ensure it fetches and parses articles
 3. Create OpenAI summarization service (Task 7)
 
 ---
 
-**Last Updated:** 2025-12-25
+**Last Updated:** 2025-12-29
