@@ -1,6 +1,6 @@
 import 'package:cybersafetyapp/models/cyber_security_event.dart';
 import 'package:http/http.dart' as http;
-import 'xml:xml/xml.dart' as xml;
+import 'package:xml/xml.dart' as xml;
 import 'dart:io';
 
 class NewsService {
@@ -36,6 +36,7 @@ class NewsService {
             publishedDate: pubDate,
             summary: null,
           );
+          
         }
 
         // 7. Return a list of CyberSecurityEvent objects
