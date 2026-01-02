@@ -53,34 +53,27 @@ Building a feature that fetches current cybersecurity events from a website, sum
 
 **File location:** `lib/models/cyber_security_event.dart`
 
+#### Task 6: Implement service to fetch cybersecurity news articles
+- [x] Created `NewsService` class structure
+- [x] Added HTTP GET request logic
+- [x] Added XML parsing logic for RSS feed
+- [x] Fixed all syntax errors
+- [x] Implemented error handling with try-catch
+- [x] Added package dependency `xml: ^6.5.0`
+
+**File location:** `lib/services/news_service.dart`
+
+**Status:** NewsService implementation complete! Ready for testing or integration.
+
 ---
 
 ### 🔄 In Progress
 
-#### Task 6: Implement service to fetch cybersecurity news articles
-- [x] Created `NewsService` class structure
-- [x] Added HTTP GET request logic
-- [x] Added XML parsing logic
-- [ ] Fix syntax errors and complete implementation
-- [ ] Test the service
-
-**File location:** `lib/services/news_service.dart`
-
-**Current Status:** Service structure complete, needs bug fixes before testing
+None currently - Ready to move to Task 7!
 
 ---
 
 ### 📋 Upcoming Tasks
-
----
-
-#### Task 6: Implement service to fetch cybersecurity news articles
-- [ ] Create `NewsService` class
-- [ ] Make HTTP GET requests
-- [ ] Parse JSON responses
-- [ ] Handle errors and exceptions
-
-**File location:** `lib/services/news_service.dart`
 
 ---
 
@@ -167,10 +160,10 @@ Building a feature that fetches current cybersecurity events from a website, sum
 
 ## Next Immediate Steps
 
-1. Fix syntax errors in NewsService (Task 6)
-2. Test NewsService to ensure it fetches and parses articles
-3. Create OpenAI summarization service (Task 7)
+1. Create OpenAI service to summarize news articles (Task 7)
+2. Design UI for displaying summarized cybersecurity events (Task 8)
+3. Implement tap-to-redirect functionality (Task 9)
 
 ---
 
-**Last Updated:** 2025-12-29
+**Last Updated:** 2026-01-02

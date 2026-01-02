@@ -45,9 +45,12 @@ dependencies:
   # For opening URLs in browser
   url_launcher: ^6.3.1
 
+  # For parsing xml
+  xml: ^6.5.0
+
   # State management
   flutter_bloc: ^9.1.1
-  bloc: ^9.1.0
+  bloc: ^9.2.0
 
 dev_dependencies:
   flutter_test:
