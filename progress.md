@@ -69,21 +69,27 @@ Building a feature that fetches current cybersecurity events from a website, sum
 
 ### 🔄 In Progress
 
-None currently - Ready to move to Task 7!
+#### Task 7: Create OpenAI service to summarize news articles
+- [x] Created `openai_service.dart` file
+- [ ] Create `OpenAIService` class structure - **WORKING ON**
+- [ ] Implement HTTP POST request to OpenAI API
+- [ ] Add proper headers (Authorization, Content-Type)
+- [ ] Format request body with model and messages
+- [ ] Parse JSON response to extract summary
+- [ ] Add error handling
+
+**File location:** `lib/services/openai_service.dart`
+
+**Current Status:** Working on implementing the OpenAI service structure
+
+**Key Info for Implementation:**
+- API Endpoint: `https://api.openai.com/v1/chat/completions`
+- Model: `gpt-3.5-turbo` or `gpt-4`
+- Response format: Extract from `choices[0].message.content`
 
 ---
 
 ### 📋 Upcoming Tasks
-
----
-
-#### Task 7: Create OpenAI service to summarize news articles
-- [ ] Create `OpenAIService` class
-- [ ] Send article text to OpenAI API
-- [ ] Use GPT model for summarization
-- [ ] Parse AI response
-
-**File location:** `lib/services/openai_service.dart`
 
 ---
 
@@ -166,4 +172,4 @@ None currently - Ready to move to Task 7!
 
 ---
 
-**Last Updated:** 2026-01-02
+**Last Updated:** 2026-01-03
