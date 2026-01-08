@@ -17,14 +17,15 @@ class OpenAIService {
       // 3. Extract API key
       apiKey = json['OPEN_AI_API_KEY'];
 
-      return apiKey;
+      return apiKey!;
     } catch (e) {
       print('Error loading API key: $e');
       throw Exception('Failed to load API key');
     }
   }
 
-  Future<String> summarizeArticle(String articleText) {
-    return [];
+  Future<String> summarizeArticle(String articleText) async {
+    String apikey = loadAPIKey();
+    
   }
 }
