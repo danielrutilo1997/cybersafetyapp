@@ -25,7 +25,17 @@ class OpenAIService {
   }
 
   Future<String> summarizeArticle(String articleText) async {
-    String apikey = loadAPIKey();
-    
+    if (apiKey == null) {
+      await loadAPIKey();
+    }
+
+    final response = await http.post(
+      Uri.parse(apiUrl),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $apiKey',
+      },
+      body: jsonEncode(<String, String>{'articleText': articleText}),
+    );
   }
 }
