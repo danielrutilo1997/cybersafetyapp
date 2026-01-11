@@ -65,27 +65,25 @@ Building a feature that fetches current cybersecurity events from a website, sum
 
 **Status:** NewsService implementation complete! Ready for testing or integration.
 
+#### Task 7: Create OpenAI service to summarize news articles
+- [x] Created `openai_service.dart` file
+- [x] Created `OpenAIService` class structure
+- [x] Implemented HTTP POST request to OpenAI API
+- [x] Added proper headers (Authorization, Content-Type)
+- [x] Formatted request body with model and messages
+- [x] Parsed JSON response to extract summary
+- [x] Added error handling
+- [x] Implemented API key loading from keys.json
+
+**File location:** `lib/services/openai_service.dart`
+
+**Status:** OpenAIService implementation complete! Ready for integration.
+
 ---
 
 ### 🔄 In Progress
 
-#### Task 7: Create OpenAI service to summarize news articles
-- [x] Created `openai_service.dart` file
-- [ ] Create `OpenAIService` class structure - **WORKING ON**
-- [ ] Implement HTTP POST request to OpenAI API
-- [ ] Add proper headers (Authorization, Content-Type)
-- [ ] Format request body with model and messages
-- [ ] Parse JSON response to extract summary
-- [ ] Add error handling
-
-**File location:** `lib/services/openai_service.dart`
-
-**Current Status:** Working on implementing the OpenAI service structure
-
-**Key Info for Implementation:**
-- API Endpoint: `https://api.openai.com/v1/chat/completions`
-- Model: `gpt-3.5-turbo` or `gpt-4`
-- Response format: Extract from `choices[0].message.content`
+None currently
 
 ---
 
@@ -166,10 +164,10 @@ Building a feature that fetches current cybersecurity events from a website, sum
 
 ## Next Immediate Steps
 
-1. Create OpenAI service to summarize news articles (Task 7)
-2. Design UI for displaying summarized cybersecurity events (Task 8)
-3. Implement tap-to-redirect functionality (Task 9)
+1. Design UI for displaying summarized cybersecurity events (Task 8)
+2. Implement tap-to-redirect functionality using url_launcher (Task 9)
+3. Set up Firebase Firestore to cache summaries (Task 10)
 
 ---
 
-**Last Updated:** 2026-01-03
+**Last Updated:** 2026-01-10
