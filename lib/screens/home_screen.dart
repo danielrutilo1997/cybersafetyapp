@@ -12,16 +12,29 @@ class HomeScreen extends StatefulWidget{
 
 class _HomeScreenState extends State<HomeScreen> {
   // State variables
+  List<CyberSecurityEvent>? events;
+  bool isLoading = true;
+  final NewsService newsService = NewsService();
+  final OpenAIService openAIService = OpenAIService(); 
+
+  Future<void> _fetchAndSummarizeArticles() async {
+    // returns Future<List<CyberSecurityEvent>>
+    final articles = newsService.fetchRSSFeed(newsService.url);
+    for (var article in await articles){
+      
+    }
+  }
   @override
   void initState() {
     super.initState();
     // Initialize and fetch data when screen loads
+    newsService.fetchRSSFeed()
   }
 
   @override
   Widget build(BuildContext context) {
     // Return your UI here (Scaffold with AppBar, body with ListView, etc.)
-    
+
   }
 }
 
