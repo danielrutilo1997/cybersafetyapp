@@ -83,22 +83,33 @@ Building a feature that fetches current cybersecurity events from a website, sum
 
 ### 🔄 In Progress
 
-None currently
+#### Task 8: Design UI for displaying summarized cybersecurity events
+- [x] Created `home_screen.dart` file
+- [x] Created `HomeScreen` StatefulWidget structure
+- [x] Created `_HomeScreenState` with state variables
+- [x] Initialized service instances (NewsService, OpenAIService)
+- [x] Started implementing `_fetchAndSummarizeArticles()` method
+- [ ] Complete the loop to get summaries for each article - **WORKING ON**
+- [ ] Update CyberSecurityEvent with summaries
+- [ ] Implement `build()` method with Scaffold
+- [ ] Add ListView.builder with Card widgets
+- [ ] Add loading indicators (CircularProgressIndicator)
+- [ ] Display article title and AI summary in UI
+- [ ] Apply styling
+
+**File location:** `lib/screens/home_screen.dart`
+
+**Current Status:** Working on fetching articles and getting summaries from OpenAI
+
+**Next Steps:**
+1. Complete the for loop to get summaries for each article
+2. Update each event with its summary
+3. Call `setState()` to update UI
+4. Build the UI in the `build()` method
 
 ---
 
 ### 📋 Upcoming Tasks
-
----
-
-#### Task 8: Design UI for displaying summarized cybersecurity events
-- [ ] Create home screen widget
-- [ ] Use ListView.builder or Card widgets
-- [ ] Display article title and AI summary
-- [ ] Add loading indicators
-- [ ] Apply styling
-
-**File location:** `lib/screens/home_screen.dart`
 
 ---
 
@@ -170,4 +181,4 @@ None currently
 
 ---
 
-**Last Updated:** 2026-01-10
+**Last Updated:** 2026-01-14
