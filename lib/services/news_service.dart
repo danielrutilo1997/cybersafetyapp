@@ -28,7 +28,14 @@ class NewsService {
           String url = item.findAllElements('link').first.innerText;
 
           String sDate = item.findAllElements('pubDate').first.innerText;
-          DateTime pubDate = DateTime.parse(sDate);
+          DateTime pubDate;
+          try {
+            pubDate = DateTime.parse(sDate);
+          } catch (e) {
+            // Do current time as fallback in case parsing fails
+            pubDate = DateTime.now();
+            print('Failed to parse date: $sDate');
+          }
 
           CyberSecurityEvent event = CyberSecurityEvent(
             title: title,
@@ -37,7 +44,7 @@ class NewsService {
             publishedDate: pubDate,
             summary: null,
           );
-          
+
           events.add(event);
         }
 

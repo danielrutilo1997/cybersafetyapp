@@ -1,6 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'dart:io';
+import 'package:flutter/services.dart';
 
 class OpenAIService {
   String? apiKey;
@@ -9,8 +9,7 @@ class OpenAIService {
   Future<String> loadAPIKey() async {
     try {
       // 1. We're reading the file from keys.json
-      final file = File('keys.json');
-      final contents = await file.readAsString();
+      final contents = await rootBundle.loadString('assets/keys.json');
 
       // 2. Parse JSON
       final json = jsonDecode(contents);
@@ -62,10 +61,15 @@ class OpenAIService {
         final summary = responseData['choices'][0]['message']['content'];
         return summary;
       } else {
-        throw Exception('Failed to summarize: ${response.statusCode}');
+        print('OpenAI API Error: ${response.statusCode}');
+        print('Response body: ${response.body}');
+        throw Exception(
+          'Failed to summarize: ${response.statusCode} - ${response.body}',
+        );
       }
     } catch (e) {
-      throw Exception('Failed to summarize article');
+      print('Exception in summarizeArticle: $e');
+      throw Exception('Failed to summarize article: $e');
     }
   }
 }

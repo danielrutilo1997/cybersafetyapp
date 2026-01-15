@@ -73,39 +73,60 @@ Building a feature that fetches current cybersecurity events from a website, sum
 - [x] Formatted request body with model and messages
 - [x] Parsed JSON response to extract summary
 - [x] Added error handling
-- [x] Implemented API key loading from keys.json
+- [x] Implemented API key loading from assets using `rootBundle`
+- [x] Updated to work with Flutter's asset system for mobile compatibility
 
 **File location:** `lib/services/openai_service.dart`
 
-**Status:** OpenAIService implementation complete! Ready for integration.
+**Status:** OpenAIService implementation complete! (Currently using description workaround due to API quota - ready to re-enable when credits are added)
+
+#### Task 8: Design and build UI for displaying cybersecurity events
+- [x] Created `home_screen.dart` file
+- [x] Created `HomeScreen` StatefulWidget structure
+- [x] Created `_HomeScreenState` with state variables
+- [x] Initialized service instances (NewsService, OpenAIService)
+- [x] Implemented complete `_fetchAndSummarizeArticles()` method
+- [x] Added loop to process articles with error handling
+- [x] Updated CyberSecurityEvent with summaries
+- [x] Implemented `build()` method with Scaffold
+- [x] Added AppBar with title
+- [x] Added ListView.builder with Card widgets
+- [x] Added loading indicators (CircularProgressIndicator)
+- [x] Display article title, summary, and publish date in UI
+- [x] Applied styling (fonts, spacing, colors)
+- [x] Tested on Android emulator successfully
+
+**File location:** `lib/screens/home_screen.dart`
+
+**Status:** UI complete and tested! App successfully fetches and displays 3 cybersecurity articles.
+
+#### Task 8.1: Configure Android app for deployment
+- [x] Fixed package name mismatch in MainActivity.kt (`com.example` → `com.rutilo`)
+- [x] Added INTERNET permission to AndroidManifest.xml
+- [x] Created assets folder and moved keys.json for mobile compatibility
+- [x] Updated pubspec.yaml to include assets/keys.json
+- [x] Updated .gitignore to protect assets/keys.json
+- [x] Enabled Developer Mode for Flutter plugin support
+- [x] Successfully launched app on Android emulator
+
+**Status:** App successfully running on Android emulator! Displaying cybersecurity news articles with truncated descriptions.
 
 ---
 
 ### 🔄 In Progress
 
-#### Task 8: Design UI for displaying summarized cybersecurity events
-- [x] Created `home_screen.dart` file
-- [x] Created `HomeScreen` StatefulWidget structure
-- [x] Created `_HomeScreenState` with state variables
-- [x] Initialized service instances (NewsService, OpenAIService)
-- [x] Started implementing `_fetchAndSummarizeArticles()` method
-- [ ] Complete the loop to get summaries for each article - **WORKING ON**
-- [ ] Update CyberSecurityEvent with summaries
-- [ ] Implement `build()` method with Scaffold
-- [ ] Add ListView.builder with Card widgets
-- [ ] Add loading indicators (CircularProgressIndicator)
-- [ ] Display article title and AI summary in UI
-- [ ] Apply styling
+#### Task 9: Implement tap-to-redirect functionality using url_launcher
+- [ ] Wrap Card widgets in GestureDetector or InkWell
+- [ ] Add onTap handler to open article URLs
+- [ ] Use url_launcher package to launch URLs in browser
+- [ ] Test tap functionality on device/emulator
 
 **File location:** `lib/screens/home_screen.dart`
 
-**Current Status:** Working on fetching articles and getting summaries from OpenAI
-
 **Next Steps:**
-1. Complete the for loop to get summaries for each article
-2. Update each event with its summary
-3. Call `setState()` to update UI
-4. Build the UI in the `build()` method
+1. Wrap each Card in InkWell widget
+2. Add onTap callback to launch article URL
+3. Test tapping articles opens browser
 
 ---
 
@@ -113,10 +134,13 @@ Building a feature that fetches current cybersecurity events from a website, sum
 
 ---
 
-#### Task 9: Implement tap-to-redirect functionality using url_launcher
-- [ ] Wrap cards in GestureDetector or InkWell
-- [ ] Use url_launcher to open URLs
-- [ ] Test on device/emulator
+#### Task 9.1: Re-enable OpenAI API summarization
+- [ ] Add credits to OpenAI account
+- [ ] Update home_screen.dart to use openAIService.summarizeArticle()
+- [ ] Remove description truncation workaround
+- [ ] Test AI summarization end-to-end
+
+**Note:** Currently using truncated article descriptions due to OpenAI API quota exceeded.
 
 ---
 
@@ -170,15 +194,30 @@ Building a feature that fetches current cybersecurity events from a website, sum
 - You chose **BLoC pattern** for state management (alternative: Provider, Riverpod)
 - Remember to keep API keys secure and never commit them to version control
 - Consider rate limits for both news API and OpenAI API
+- **Current Workaround:** Using truncated article descriptions instead of AI summaries due to OpenAI API quota exceeded. Re-enable AI summarization once credits are added.
+- **Security:** API keys properly protected in `.gitignore` (both `/keys.json` and `/assets/keys.json`)
+- **Mobile Compatibility:** Using Flutter's `rootBundle.loadString()` to load API keys from assets (works on mobile, unlike `File()` approach)
 
 ---
 
 ## Next Immediate Steps
 
-1. Design UI for displaying summarized cybersecurity events (Task 8)
-2. Implement tap-to-redirect functionality using url_launcher (Task 9)
-3. Set up Firebase Firestore to cache summaries (Task 10)
+1. ✅ ~~Design UI for displaying summarized cybersecurity events (Task 8)~~ - **COMPLETED!**
+2. Implement tap-to-redirect functionality using url_launcher (Task 9) - **IN PROGRESS**
+3. Add OpenAI credits and re-enable AI summarization (Task 9.1)
+4. Set up Firebase Firestore to cache summaries (Task 10)
 
 ---
 
-**Last Updated:** 2026-01-14
+## Recent Achievements
+
+- ✅ Successfully launched app on Android emulator!
+- ✅ App fetches and displays 3 cybersecurity news articles from BleepingComputer RSS feed
+- ✅ Fixed package name issue (com.example → com.rutilo.cybersafetyapp)
+- ✅ Added INTERNET permission to AndroidManifest.xml
+- ✅ Configured secure API key storage using Flutter assets system
+- ✅ UI showing articles with titles, descriptions, and publish dates
+
+---
+
+**Last Updated:** 2026-01-15

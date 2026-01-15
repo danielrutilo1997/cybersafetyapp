@@ -50,3 +50,4 @@ app.*.map.json
 
 # Keys
 /keys.json
+/assets/keys.json

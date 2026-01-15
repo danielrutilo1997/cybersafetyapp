@@ -19,14 +19,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _fetchAndSummarizeArticles() async {
     try {
+      print('Fetching articles...');
       // returns Future<List<CyberSecurityEvent>>
-      final articles = newsService.fetchRSSFeed(newsService.url);
-      for (var article in await articles) {
-        // Getting summary description from OpenAI
-        String summary = await openAIService.summarizeArticle(
-          article.description,
-        );
+      final articles = await newsService.fetchRSSFeed(newsService.url);
+      print('Fetched ${articles.length} articles!');
+      final limitedArticles = articles.take(3).toList();
 
+      for (var article in limitedArticles) {
+        print('Processing: ${article.title}');
+        // Skip OpenAI summarization for now (quota exceeded)
+        // Use first 200 characters of description as summary
+        String summary = article.description.length > 200
+            ? '${article.description.substring(0, 200)}...'
+            : article.description;
         // Create a new event with the summary
         CyberSecurityEvent updatedEvent = CyberSecurityEvent(
           title: article.title,
@@ -43,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         isLoading = false;
       });
+      print('Finished!');
     } catch (e) {
       setState(() {
         isLoading = false;
